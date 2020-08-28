@@ -51,10 +51,11 @@ public class Flight {
         return this.getFlightCapacity() - this.getNumberOfPassengers();
     }
 
-    public void addPassenger(Passenger newPassenger) {
+    public Passenger addPassenger(Passenger newPassenger) {
         if(this.availableSeats() > 0 ) {
             passengers.add(newPassenger);
         }
+        return newPassenger;
     }
 }
 
