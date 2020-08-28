@@ -2,7 +2,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Flight {
-    private ArrayList<Passenger> passengers = new ArrayList<Passenger>();
+    private ArrayList<Passenger> passengers;
     private Plane plane;
     private String flightNumber;
     private String destination;
@@ -15,10 +15,12 @@ public class Flight {
         this.destination = destination;
         this.departureAirport = departureAirport;
         this.departureTime = departureTime;
+        passengers = new ArrayList<Passenger>();
+
     }
 
-    public ArrayList<Passenger> getPassengers() {
-        return passengers;
+    public int getNumberOfPassengers() {
+        return passengers.size();
     }
 
     public Plane getPlane() {
@@ -41,12 +43,18 @@ public class Flight {
         return departureTime;
     }
 
-    public int flightCapacity() {
+    public int getFlightCapacity() {
         return this.plane.getPlaneType().getCapacity();
     }
 
     public int availableSeats() {
-        return this.plane.getPlaneType().getCapacity();
+        return this.getFlightCapacity() - this.getNumberOfPassengers();
+    }
+
+    public void addPassenger(Passenger newPassenger) {
+        if(this.availableSeats() > 0 ) {
+            passengers.add(newPassenger);
+        }
     }
 }
 

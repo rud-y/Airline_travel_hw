@@ -12,6 +12,6 @@ public class Play {
         + "seats, " + " weight: " +plane1.getPlaneType().getTotalWeight() + " tons.");
 
         //just play:::::
-        System.out.println(flight1.getPassengers().toString());
+        System.out.println("Number of passengers on flight number "+ flight1.getFlightNumber() + " is "+ flight1.getNumberOfPassengers());
     }
 }

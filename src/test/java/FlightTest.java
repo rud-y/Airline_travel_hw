@@ -7,16 +7,28 @@ public class FlightTest {
 
     Flight flight1;
     Plane plane1;
-
+    Passenger passenger1;
+    Passenger passenger2;
 
     @Before
     public void before() {
         plane1 = new Plane(PlaneType.AIRBUS600);
         flight1 = new Flight(plane1, "FR4466", "EDI", "BRC", "10:30");
+        passenger1 = new Passenger("Liam Gallagher",2 );
+        passenger2 = new Passenger("Susan Geller",1 );
     }
 
     @Test
-    public void canReturnNumberOfAvailableSeats() {
+    public void canReturnNumberOfAvailableSeats_planeIsEmpty() {
         assertEquals(100 ,flight1.availableSeats());
     }
+
+    @Test
+    public void canReturnNumberOfAvailableSeats_planeIsNOTEmpty() {
+        flight1.addPassenger(passenger1);
+        flight1.addPassenger(passenger2);
+        assertEquals(98 ,flight1.availableSeats());
+    }
+
+
 }
