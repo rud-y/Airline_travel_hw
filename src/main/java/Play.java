@@ -13,5 +13,6 @@ public class Play {
 
         //just play:::::
         System.out.println("Number of passengers on flight number "+ flight1.getFlightNumber() + " is "+ flight1.getNumberOfPassengers());
+
     }
 }

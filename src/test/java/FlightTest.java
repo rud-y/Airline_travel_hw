@@ -26,7 +26,6 @@ public class FlightTest {
     @Test
     public void canAddPassenger() {
         flight1.addPassenger(passenger1);
-
         assertEquals(1, flight1.getNumberOfPassengers());
     }
 
@@ -34,7 +33,7 @@ public class FlightTest {
     public void canReturnNumberOfAvailableSeats_planeIsNOTEmpty() {
         flight1.addPassenger(passenger1);
         flight1.addPassenger(passenger2);
-        assertEquals(98 ,flight1.availableSeats());
+        assertEquals(98, flight1.availableSeats());
     }
 
 
