@@ -10,13 +10,12 @@ public class Play {
         flight1.addPassenger(passenger2);
         flight1.addPassenger(passenger3);
 
-        System.out.println("plane1 capacity is " +plane1.getPlaneType().getCapacity());
-        System.out.println("plane1 info: " +plane1.getPlaneType() + ", capacity: " + plane1.getPlaneType().getCapacity()
-        + " seats, " + " weight: " +plane1.getPlaneType().getTotalWeight() + " kg.");
+        System.out.println("plane1 capacity is " + plane1.getPlaneType().getCapacity());
+        System.out.println("plane1 info: " + plane1.getPlaneType() + ", capacity: " + plane1.getPlaneType().getCapacity()
+                + " seats, " + " weight: " + plane1.getPlaneType().getTotalWeight() + " kg.");
 
         //just play:::::
-        System.out.println("Number of passengers on flight number "+ flight1.getFlightNumber() + " is "+ flight1.getNumberOfPassengers());
-
+        System.out.println("Number of passengers on flight number " + flight1.getFlightNumber() + " is " + flight1.getNumberOfPassengers());
 
     }
 }

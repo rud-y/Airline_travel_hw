@@ -53,11 +53,11 @@ public class Flight extends FlightManager {
         return this.getFlightCapacity() - this.getNumberOfPassengers();
     }
 
-    public Passenger addPassenger(Passenger newPassenger) {
-        if(this.availableSeats() > 0 ) {
+
+    public void addPassenger(Passenger newPassenger) {
+        if(!passengers.contains(newPassenger)) {
             passengers.add(newPassenger);
         }
-        return newPassenger;
     }
 
     public int passengerWeightAllowance() {
