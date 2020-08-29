@@ -51,4 +51,12 @@ public class FlightTest {
         assertEquals(30,flight1.totalWeightOfBaggage());
     }
 
+    @Test
+    public void canCalculateUnusedBaggageSpace() {
+        flight1.addPassenger(passenger1);
+        flight1.addPassenger(passenger2);
+        flight1.addPassenger(passenger3);
+        assertEquals(70, flight1.unusedBaggageWeight());
+    }
+
 }

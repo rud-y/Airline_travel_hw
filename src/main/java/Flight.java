@@ -1,3 +1,5 @@
+import com.sun.org.apache.bcel.internal.generic.ARETURN;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -67,6 +69,12 @@ public class Flight extends FlightManager {
     public int totalWeightOfBaggage() {
        return this.passengerWeightAllowance() * this.getNumberOfPassengers();
     }
+
+    public int unusedBaggageWeight() {
+        int planeCapacity = this.getPlane().getPlaneType().getCapacity();
+        return planeCapacity - this.totalWeightOfBaggage();
+    }
+
 }
 
 
