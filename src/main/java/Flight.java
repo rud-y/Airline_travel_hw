@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Flight {
+public class Flight extends FlightManager {
     private ArrayList<Passenger> passengers;
     private Plane plane;
     private String flightNumber;
@@ -56,6 +56,16 @@ public class Flight {
             passengers.add(newPassenger);
         }
         return newPassenger;
+    }
+
+    public int passengerWeightAllowance() {
+        int totalWeight = this.getPlane().getPlaneType().getTotalWeight();
+        int planeCapacity = this.getPlane().getPlaneType().getCapacity();
+        return (totalWeight/2) / planeCapacity;
+    }
+
+    public int totalWeightOfBaggage() {
+       return this.passengerWeightAllowance() * this.getNumberOfPassengers();
     }
 }
 
