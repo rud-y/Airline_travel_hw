@@ -14,7 +14,7 @@ public class FlightTest {
     @Before
     public void before() {
         plane1 = new Plane(PlaneType.AIRBUS600);
-        flight1 = new Flight(plane1, "FR4466", "EDI", "BRC", "10:30");
+        flight1 = new Flight(plane1, "FR4466", "EDI", "BRC", "2020-08-01 10:30:00");
         passenger1 = new Passenger("Liam Gallagher",2 );
         passenger2 = new Passenger("Susan Geller",1 );
         passenger3 = new Passenger("Morgan Freeman",1 );
@@ -29,7 +29,8 @@ public class FlightTest {
     public void canAddPassenger() {
         flight1.addPassenger(passenger1);
         flight1.addPassenger(passenger1);
-        assertEquals(1, flight1.getNumberOfPassengers());
+        flight1.addPassenger(passenger3);
+        assertEquals(2, flight1.getNumberOfPassengers());
     }
 
     @Test

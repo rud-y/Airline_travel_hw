@@ -1,7 +1,6 @@
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
+
 
 public class Flight extends FlightManager {
     private ArrayList<Passenger> passengers;
@@ -9,9 +8,9 @@ public class Flight extends FlightManager {
     private String flightNumber;
     private String destination;
     private String departureAirport;
-    private String departureTime;
+    private Date departureTime;
 
-    public Flight(Plane plane, String flightNumber, String destination, String departureAirport, String departureTime) {
+    public Flight(Plane plane, String flightNumber, String destination, String departureAirport, Date departureTime) {
         this.plane = plane;
         this.flightNumber = flightNumber;
         this.destination = destination;
@@ -41,7 +40,7 @@ public class Flight extends FlightManager {
         return departureAirport;
     }
 
-    public String getDepartureTime() {
+    public Date getDepartureTime() {
         return departureTime;
     }
 
