@@ -1,10 +1,14 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
-
+    Date date;
     Flight flight1;
     Plane plane1;
     Passenger passenger1;
@@ -13,8 +17,9 @@ public class FlightTest {
 
     @Before
     public void before() {
+        date = new GregorianCalendar(2020, Calendar.OCTOBER, 10).getTime();
         plane1 = new Plane(PlaneType.AIRBUS600);
-        flight1 = new Flight(plane1, "FR4466", "EDI", "BRC", "2020-08-01 10:30:00");
+        flight1 = new Flight(plane1, "FR4466", "EDI", "BRC", date);
         passenger1 = new Passenger("Liam Gallagher",2 );
         passenger2 = new Passenger("Susan Geller",1 );
         passenger3 = new Passenger("Morgan Freeman",1 );

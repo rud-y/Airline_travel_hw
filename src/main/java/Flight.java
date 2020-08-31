@@ -58,17 +58,17 @@ public class Flight extends FlightManager {
             passengers.add(newPassenger);
         }
     }
-
+    @Override
     public int passengerWeightAllowance() {
         int totalWeight = this.getPlane().getPlaneType().getTotalWeight();
         int planeCapacity = this.getPlane().getPlaneType().getCapacity();
         return (totalWeight/2) / planeCapacity;
     }
-
+    @Override
     public int totalWeightOfBaggage() {
        return this.passengerWeightAllowance() * this.getNumberOfPassengers();
     }
-
+    @Override
     public int unusedBaggageWeight() {
         int planeCapacity = this.getPlane().getPlaneType().getCapacity();
         return planeCapacity - this.totalWeightOfBaggage();
